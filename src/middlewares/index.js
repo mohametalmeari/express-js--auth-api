@@ -1,4 +1,4 @@
-const { merge } = require("lodash");
+const { merge, get } = require("lodash");
 
 const { getUserBySessionToken } = require("../db/users");
 
