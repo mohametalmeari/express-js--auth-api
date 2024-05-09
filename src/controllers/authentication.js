@@ -1,5 +1,11 @@
+const dotenv = require("dotenv");
+
 const { createUser, getUserByEmail } = require("../db/users");
 const { authentication, random } = require("../helpers");
+
+dotenv.config();
+
+const DOMAIN = process.env.DOMAIN;
 
 const login = async (req, res) => {
   try {
@@ -36,7 +42,7 @@ const login = async (req, res) => {
 
     // Send session token as cookie
     res.cookie("AUTH", user.authentication.sessionToken, {
-      domain: "localhost",
+      domain: DOMAIN,
       path: "/",
     });
 
@@ -87,7 +93,7 @@ const register = async (req, res) => {
 
     // - Send session token as cookie
     res.cookie("AUTH", user.authentication.sessionToken, {
-      domain: "localhost",
+      domain: DOMAIN,
       path: "/",
     });
 

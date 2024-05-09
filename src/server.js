@@ -19,10 +19,11 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT;
+const DOMAIN = process.env.DOMAIN;
 
 const server = http.createServer(app);
 server.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}/`);
+  console.log(`Server is running on http://${DOMAIN}:${PORT}/`);
 });
 
 mongoose.Promise = Promise;
