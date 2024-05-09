@@ -14,7 +14,7 @@ const UserSchema = new mongoose.Schema({
 const UserModel = mongoose.model("User", UserSchema);
 
 // Actions
-const gerUsers = () => UserModel.find();
+const getUsers = () => UserModel.find();
 const getUserByEmail = (email) => UserModel.findOne({ email });
 const getUserBySessionToken = (sessionToken) =>
   UserModel.findOne({ "authentication.sessionToken": sessionToken });
@@ -26,7 +26,7 @@ const updateUserById = (id, values) => UserModel.findByIdAndUpdate(id, values);
 
 module.exports = {
   UserModel,
-  gerUsers,
+  getUsers,
   getUserByEmail,
   getUserBySessionToken,
   getUserById,
