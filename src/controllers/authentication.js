@@ -1,7 +1,7 @@
 const { createUser, getUserByEmail } = require("../db/users");
 const { authentication, random } = require("../helpers");
 
-export const register = async (req, res) => {
+const register = async (req, res) => {
   try {
     const { email, password, username } = req.body;
 
@@ -51,3 +51,5 @@ export const register = async (req, res) => {
     return res.sendStatus(400);
   }
 };
+
+module.exports = { register };
