@@ -23,7 +23,11 @@ const DOMAIN = process.env.DOMAIN;
 
 const server = http.createServer(app);
 server.listen(PORT, () => {
-  console.log(`Server is running on http://${DOMAIN}:${PORT}/`);
+  if (process.env.NODE_ENV === "development") {
+    console.log(`Server is running on http://${DOMAIN}:${PORT}/`);
+  } else {
+    console.log(`Server is running on https://${DOMAIN}`);
+  }
 });
 
 mongoose.Promise = Promise;
