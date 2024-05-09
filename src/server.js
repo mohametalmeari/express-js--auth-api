@@ -7,6 +7,8 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
+const router = require("./router");
+
 const app = express();
 
 dotenv.config();
@@ -24,3 +26,5 @@ server.listen(8080, () => {
 mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGO_URL);
 mongoose.connection.on("error", (error) => console.log(error));
+
+app.use("/", router());
