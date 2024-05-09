@@ -33,6 +33,7 @@ const isOwner = async (req, res, next) => {
   try {
     const { id } = req.params;
     const currentUserId = get(req, "identity._id");
+    const isAdmin = get(req, "identity.role") === "admin";
 
     // Check if the user is authenticated
     if (!currentUserId) {
@@ -40,7 +41,7 @@ const isOwner = async (req, res, next) => {
     }
 
     // Check if the user is authorized (owner of the resource)
-    if (currentUserId.toString() !== id) {
+    if (currentUserId.toString() !== id && !isAdmin) {
       return res.sendStatus(403);
     }
 
