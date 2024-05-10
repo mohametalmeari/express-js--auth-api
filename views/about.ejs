@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include('shared/styles') %>
+  </head>
+  <body>
+    <%- include('shared/navbar', {active: "about"}); %>
+    <h1>About Users API</h1>
+    <p>
+      This is an API built with Node.js, Express, and MongoDB. It allows users
+      to register, login, and view their profile.
+    </p>
+    <h2>Routes</h2>
+    <ul>
+      <li>POST /auth/register</li>
+      <li>POST /auth/login</li>
+      <li>GET <a href="/users">/users</a></li>
+      <li>DELETE /users/:id</li>
+      <li>PATCH /users/:id</li>
+  </body>
+</html>

@@ -46,6 +46,12 @@ const login = async (req, res) => {
       path: "/",
     });
 
+    // Redirect to /users if request is internal
+    if (DOMAIN === req.get("origin")?.split(/\/|:/)[3]) {
+      console.log("redirecting to /users");
+      return res.redirect("/users");
+    }
+
     return res.status(200).json(user).end();
   } catch (error) {
     console.log(error);
@@ -96,6 +102,12 @@ const register = async (req, res) => {
       domain: DOMAIN,
       path: "/",
     });
+
+    // Redirect to /users if request is internal
+    if (DOMAIN === req.get("origin")?.split(/\/|:/)[3]) {
+      console.log("redirecting to /users");
+      return res.redirect("/users");
+    }
 
     return res.status(200).json(user).end();
   } catch (error) {

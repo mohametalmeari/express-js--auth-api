@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include('shared/styles') %>
+  </head>
+  <body>
+    <%- include('shared/navbar', {active: "home"}); %>
+    <h1>Authenticated Users API</h1>
+    <form action="/auth/login" method="post">
+      <label>
+        Email:
+        <input type="email" name="email" />
+      </label>
+      <label>
+        Password:
+        <input type="password" name="password" />
+      </label>
+      <button type="submit">Submit</button>
+      or <a href="/signup">Sign Up</a>
+    </form>
+  </body>
+</html>

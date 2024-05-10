@@ -13,6 +13,9 @@ const app = express();
 
 dotenv.config();
 
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true })); // Parse JSON bodies (as sent by HTML forms)
+
 app.use(cors({ credentials: true }));
 app.use(compression());
 app.use(cookieParser());
