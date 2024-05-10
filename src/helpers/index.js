@@ -1,5 +1,5 @@
-const dotenv = require("dotenv");
-const crypto = require("crypto");
+import dotenv from "dotenv";
+import crypto from "crypto";
 
 dotenv.config();
 
@@ -10,4 +10,4 @@ const authentication = (salt, password) =>
     .update(process.env.SECRET)
     .digest("hex");
 
-module.exports = { random, authentication };
+export { random, authentication };

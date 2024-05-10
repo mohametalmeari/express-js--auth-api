@@ -1,13 +1,13 @@
-const express = require("express");
-const http = require("http");
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const compression = require("compression");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
+import express from "express";
+import http from "http";
+import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import compression from "compression";
+import cors from "cors";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
 
-const router = require("./router");
+import router from "./router/index.js";
 
 const app = express();
 

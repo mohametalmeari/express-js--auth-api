@@ -1,11 +1,11 @@
-const { Router } = require("express");
+import { Router } from "express";
 
-const authentication = require("./authentication");
-const users = require("./users");
+import authentication from "./authentication.js";
+import users from "./users.js";
 
 const router = Router();
 
-module.exports = () => {
+export default () => {
   authentication(router);
   users(router);
   return router;

@@ -1,6 +1,6 @@
-const { login, register } = require("../controllers/authentication");
+import { login, register } from "../controllers/authentication.js";
 
-module.exports = (router) => {
+export default (router) => {
   router.post("/auth/register", register); // User registration route
   router.post("/auth/login", login); // User login route
 };

@@ -1,8 +1,9 @@
-const { merge, get } = require("lodash");
+import lodash from "lodash";
+const { get, merge } = lodash;
 
-const { getUserBySessionToken } = require("../db/users");
+import { getUserBySessionToken } from "../db/users.js";
 
-const isAuthenticated = async (req, res, next) => {
+export const isAuthenticated = async (req, res, next) => {
   try {
     const sessionToken = req.cookies["AUTH"];
 
@@ -29,7 +30,7 @@ const isAuthenticated = async (req, res, next) => {
   }
 };
 
-const isOwner = async (req, res, next) => {
+export const isOwner = async (req, res, next) => {
   try {
     const { id } = req.params;
     const currentUserId = get(req, "identity._id");
@@ -52,5 +53,3 @@ const isOwner = async (req, res, next) => {
     return res.sendStatus(400);
   }
 };
-
-module.exports = { isAuthenticated, isOwner };

@@ -1,7 +1,7 @@
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
 
-const { createUser, getUserByEmail } = require("../db/users");
-const { authentication, random } = require("../helpers");
+import { createUser, getUserByEmail } from "../db/users.js";
+import { authentication, random } from "../helpers/index.js";
 
 dotenv.config();
 
@@ -104,4 +104,4 @@ const register = async (req, res) => {
   }
 };
 
-module.exports = { login, register };
+export { login, register };
