@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 
-import { createUser, getUserByEmail } from "../db/users.js";
-import { authentication, random } from "../helpers/index.js";
+import { createUser, getUserByEmail } from "../db/users";
+import { authentication, random } from "../helpers";
 
 dotenv.config();
 

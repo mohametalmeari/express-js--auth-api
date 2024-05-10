@@ -1,5 +1,5 @@
-import { getAllUsers, deleteUser, updateUser } from "../controllers/users.js";
-import { isAuthenticated, isOwner } from "../middlewares/index.js";
+import { getAllUsers, deleteUser, updateUser } from "../controllers/users";
+import { isAuthenticated, isOwner } from "../middlewares";
 
 export default (router) => {
   router.get("/users", isAuthenticated, getAllUsers); // Get all users route with authentication

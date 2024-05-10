@@ -1,4 +1,4 @@
-import { getUsers, deleteUserById, getUserById } from "../db/users.js";
+import { getUsers, deleteUserById, getUserById } from "../db/users";
 
 const getAllUsers = async (_req, res) => {
   try {

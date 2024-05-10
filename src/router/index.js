@@ -1,7 +1,7 @@
 import { Router } from "express";
 
-import authentication from "./authentication.js";
-import users from "./users.js";
+import authentication from "./authentication";
+import users from "./users";
 
 const router = Router();
 

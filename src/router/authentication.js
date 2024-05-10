@@ -1,4 +1,4 @@
-import { login, register } from "../controllers/authentication.js";
+import { login, register } from "../controllers/authentication";
 
 export default (router) => {
   router.post("/auth/register", register); // User registration route

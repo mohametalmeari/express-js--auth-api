@@ -7,7 +7,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
-import router from "./router/index.js";
+import router from "./router";
 
 const app = express();
 

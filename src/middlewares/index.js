@@ -1,7 +1,7 @@
 import lodash from "lodash";
 const { get, merge } = lodash;
 
-import { getUserBySessionToken } from "../db/users.js";
+import { getUserBySessionToken } from "../db/users";
 
 export const isAuthenticated = async (req, res, next) => {
   try {
